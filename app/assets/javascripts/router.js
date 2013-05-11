@@ -1,0 +1,3 @@
+KumavisPhotoShare.Router.map(function() {
+
+});
