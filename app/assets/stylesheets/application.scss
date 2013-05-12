@@ -12,6 +12,8 @@
  *= require_tree .
  */
 
+@import url(http://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps);
+
 html, body{
     min-height: 100%;
     height: 100%;
@@ -20,27 +22,69 @@ html, body{
 }
 
 .left{
-  background: red;
+  // background-image: url('/assets/foresttile.jpg');
+  background: rgb(126,165,1);
 
   .controlPanel{
-    background: pink;
+    background: rgba(200, 200, 200, 0.5);
 
-    .btn{
-      width: 150px;
-      height: 50px;
-      background: blue;
+    .btn .label{
+      font-size: 3em;
+      font-family: 'Oleo Script Swash Caps', cursive;
     }
+
+    #downloadBtn{
+      width: 320px;
+
+      svg{
+        float: left;
+      }
+    }
+
+    #uploadBtn{
+      width: 300px;
+
+     .label{
+        float: left;
+      }
+    }
+
+    .btn:hover{
+      color: blue;
+
+      path,polygon{
+        fill: blue;
+      }
+
+    }
+
+    input#uploader {
+      height: 30px;
+      cursor: pointer;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      font-size: 100px;
+      z-index: 2;
+
+      opacity: 0.0; /* Standard: FF gt 1.5, Opera, Safari */
+      filter: alpha(opacity=0); /* IE lt 8 */
+      -ms-filter: "alpha(opacity=0)"; /* IE 8 */
+      -khtml-opacity: 0.0; /* Safari 1.x */
+      -moz-opacity: 0.0; /* FF lt 1.5, Netscape */
+    }
+
   }
 }
 
 .right{
-  background: green;
+  background: rgb(164,103,46);
   overflow-y: scroll;
 
   .thumbnail{
     width: 200px;
     height: 200px;
-    background: yellow;
+    background: white;
     margin-top: 10px;
     overflow: hidden;
   }

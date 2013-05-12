@@ -4,12 +4,23 @@ KumavisPhotoShare.ApplicationView = Ember.View.extend
   controlPanelHeight: 150
   filmStripWidth: 200
 
+  currentImage: null
+  
+  selectImage: (image) -> 
+    @set('currentImage',image)
+
+    Ember.run.next =>
+      @$('.left .thumbnail img').on 'load', => $(window).resize()
+      check = @$('.left .thumbnail img')
+
   didInsertElement: ->
     @_super()
     # Position Elements
     @positionElements()
+    
     # Setup reposition on window resize
     $(window).resize => @positionElements()
+    
     # Setup file handling
     @_setupFileHandling()
 
@@ -23,6 +34,11 @@ KumavisPhotoShare.ApplicationView = Ember.View.extend
       left: 0
     @$('.left').height $(window).height()
 
+    # Main section - image
+    @$('.left .thumbnail').offset
+      top: ($(window).height()-@get('controlPanelHeight'))/2-@$('.left .thumbnail img').height()/2
+      left: ($(window).width()-@get('filmStripWidth'))/2-@$('.left .thumbnail img').width()/2
+
     # Main section - control panel
     @$('.left .controlPanel').width $(window).width()-@get('filmStripWidth')
     @$('.left .controlPanel').offset
@@ -33,10 +49,10 @@ KumavisPhotoShare.ApplicationView = Ember.View.extend
     # Main-section - control panel - buttons
     @$('.left .controlPanel #downloadBtn').offset
       top: $('.left .controlPanel').position().top+($('.left .controlPanel').height()-50)/2
-      left: ($('.left .controlPanel').width()-150)/2+100
+      left: ($('.left .controlPanel').width()-150)/2+150
     @$('.left .controlPanel #uploadBtn').offset
       top: $('.left .controlPanel').position().top+($('.left .controlPanel').height()-50)/2
-      left: ($('.left .controlPanel').width()-150)/2-100
+      left: ($('.left .controlPanel').width()-150)/2-150
 
     # filmstrip section, right
     @$('.right').width @get('filmStripWidth')

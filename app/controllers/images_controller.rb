@@ -25,4 +25,13 @@ class ImagesController < ApplicationController
     render json: @images
   end
 
+  def download
+
+
+    "/system/:attachment/:id/:style/:filename"
+    
+    send_file '/home/railsway/downloads/huge.zip', :type=>"application/zip"
+    send_file @download.wallpapers[1].wallpaper.url, :type => 'image/jpeg', :disposition => 'attachment'
+  end
+
 end

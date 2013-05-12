@@ -6,8 +6,8 @@ KumavisPhotoShare.Image = DS.Model.extend
     "/images/#{@get('id')}.original"
   ).property("id")
 
-  iconUrl: ( ->
-    "/images/#{@get('id')}.icon"
+  largeUrl: ( ->
+    "/images/#{@get('id')}.large"
   ).property("id")
 
   thumbnailUrl: ( ->

@@ -4,6 +4,6 @@ class Image < ActiveRecord::Base
   has_attached_file :data,
     path: ":rails_root/../KumavisPhotoShare_assets/:id/:style/:filename",
     url: "/system/:attachment/:id/:style/:filename",
-    styles: { thumbnail: ["200x200#", :png], icon: ["460x345#", :png]}
+    styles: { thumbnail: ["200x200#", :png], large: ["1000x600#", :png]}
 
 end
