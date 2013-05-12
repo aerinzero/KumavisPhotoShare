@@ -1,6 +1,9 @@
 KumavisPhotoShare::Application.routes.draw do
 
-  root :to => 'site#index'
+  match "/images/:id.:type" => "images#show"
+  resources :images
+  
+  root to: 'site#index'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

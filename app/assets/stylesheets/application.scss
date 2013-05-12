@@ -40,10 +40,8 @@ html, body{
   .thumbnail{
     width: 200px;
     height: 200px;
-    // background: yellow;
-
+    background: yellow;
     margin-top: 10px;
-
-    background-image: url('http://icons.iconarchive.com/icons/tanitakawkaw/simple-cute/256/heart-icon.png')
+    overflow: hidden;
   }
 }

@@ -27,6 +27,8 @@ gem 'ember-source', '1.0.0.pre4.2'
 
 gem 'paperclip'
 
+gem 'pry'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
