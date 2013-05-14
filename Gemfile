@@ -25,7 +25,7 @@ gem 'jquery-rails'
 gem 'ember-rails'
 gem 'ember-source', '1.0.0.pre4.2'
 
-gem 'paperclip'
+gem "paperclip", "~> 2.7"
 
 gem 'pry'
 
