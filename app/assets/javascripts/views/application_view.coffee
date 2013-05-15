@@ -3,15 +3,19 @@ KumavisPhotoShare.ApplicationView = Ember.View.extend
   # Element heights
   controlPanelHeight: 150
   filmStripWidth: 200
-
-  currentImage: null
   
-  selectImage: (image) -> 
-    @set('currentImage',image)
+  currentImage: (-> 
+    retVal = @get('controller.currentImage')
+    if retVal? == false
+      @selectImage @get('controller.firstObject')
+      retVal = @get('controller.firstObject')
+    return retVal
+  ).property('controller.currentImage','controller.firstObject')
 
-    Ember.run.next =>
-      @$('.left .thumbnail img').on 'load', => $(window).resize()
-      check = @$('.left .thumbnail img')
+  selectImage: (image) -> 
+    @set('controller.currentImage',image)
+
+    Ember.run.next => @$('.left .thumbnail img').on 'load', => $(window).resize()
 
   didInsertElement: ->
     @_super()
@@ -25,7 +29,6 @@ KumavisPhotoShare.ApplicationView = Ember.View.extend
     @_setupFileHandling()
 
   positionElements: ->
-    console.log "resize"
 
     # Main section, left
     @$('.left').width $(window).width()-@get('filmStripWidth')
@@ -129,7 +132,7 @@ KumavisPhotoShare.ApplicationView = Ember.View.extend
 
         # We are grabbing the last object that we uploaded and we're setting that as our current image
         displayImage = @get('images.lastObject')
-        @set('currentImage', displayImage)
+        @set('controller.currentImage', displayImage)
 
         # !!!: This should be done server-side, not client-side
         # We're going to set a coverImage if our current coverImage is nil

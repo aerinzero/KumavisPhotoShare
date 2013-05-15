@@ -13,8 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require handlebars
-//= require ember
-//= require ember-data
+//= require ember-freeze
+//= require ember-data-freeze
 //= require_self
 //= require kumavis_photo_share
 KumavisPhotoShare = Ember.Application.create();
