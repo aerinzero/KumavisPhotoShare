@@ -73,6 +73,10 @@ KumavisPhotoShare.ApplicationView = Ember.View.extend
       left: $(window).width()-@get('filmStripWidth')
     @$('.right').height $(window).height()
 
+    # setup lazy loading for images
+    @$(".thumbnail > img:not(.lazy)").lazyload
+      container: $(".right")
+
   showUploadBox: -> $('input#uploader')[0].click()
     
   _setupFileHandling: ->

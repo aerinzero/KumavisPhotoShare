@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.lazyloadimages
 //= require handlebars
 //= require ember-freeze
 //= require ember-data-freeze

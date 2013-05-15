@@ -4,8 +4,6 @@
     <div class="thumbnail">
       <img {{bindAttr src="view.currentImage.largeUrl" alt="view.currentImage.fileName"}}/>
     </div>
-  {{else}}
-    Select an image on the right
   {{/if}}
 
   <div class="controlPanel">
@@ -27,10 +25,8 @@
 <div class="right">
   {{#each image in controller}}
     <div class="thumbnail">
-      <img {{bindAttr src="image.thumbnailUrl" alt="image.fileName"}} {{action selectImage image target="view"}} />
+      <img src="/assets/grey_empty.gif" {{bindAttr data-original="image.thumbnailUrl" alt="image.fileName"}} {{action selectImage image target="view"}} />
     </div>
-  {{else}}
-    loading...
   {{/each}}
 </div>
 
