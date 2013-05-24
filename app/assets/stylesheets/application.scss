@@ -91,9 +91,12 @@ html, body{
     #downloadBtn{
       width: 150px;
 
-      svg{
-        // float: left;
+      a {
+      text-decoration:  none;
+      color:            black;
+      &:hover{ color: blue; }
       }
+
     }
 
     #uploadBtn{
@@ -102,17 +105,6 @@ html, body{
      .label{
         // float: left;
       }
-    }
-
-
-
-    .btn:hover{
-      color: blue;
-
-      path,polygon{
-        fill: blue;
-      }
-
     }
 
     #uploader:hover + #uploadBtn .label {color: blue}
