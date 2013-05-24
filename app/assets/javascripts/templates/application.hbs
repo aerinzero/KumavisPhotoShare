@@ -1,35 +1,38 @@
-<div id="overlay">
+{{#if isModalVisible}}
+  <div id='overlay'>
+    {{outlet modal}}
+  </div>
+{{/if}}
 
-  <div class="left">
+<div class="left">
 
-    {{#if view.currentImage}}
-      <div class="thumbnail">
-        <img {{bindAttr src="view.currentImage.largeUrl" alt="view.currentImage.fileName"}}/>
-      </div>
-    {{/if}}
-
-    <div class="controlPanel">
-
-      <input id="uploader" multiple='multiple' type='file'>
-      
-      <div id="uploadBtn" class="btn" {{action showUploadBox target="view"}}>
-        <div class="label">Upload</div>
-      </div>
-
-      <div id="downloadBtn" class="btn" {{action download}} >
-        <div class="label">Download</div>
-      </div>
-
-      
+  {{#if view.currentImage}}
+    <div class="thumbnail">
+      <img {{bindAttr src="view.currentImage.largeUrl" alt="view.currentImage.fileName"}}/>
     </div>
-  </div>
+  {{/if}}
 
-  <div class="right">
-    {{#each image in controller}}
-      <div class="thumbnail">
-        <img src="/assets/grey_empty.gif" {{bindAttr data-original="image.thumbnailUrl" alt="image.fileName"}} {{action selectImage image target="view"}} />
-      </div>
-    {{/each}}
-  </div>
+  <div class="controlPanel">
 
+    <input id="uploader" multiple='multiple' type='file'>
+    
+    <div id="uploadBtn" class="btn" {{action showUploadBox target="view"}}>
+      <div class="label">Upload</div>
+    </div>
+
+    <div id="downloadBtn" class="btn" {{action download}} >
+      <div class="label">Download</div>
+    </div>
+
+    
+  </div>
 </div>
+
+<div class="right">
+  {{#each image in controller}}
+    <div class="thumbnail">
+      <img src="/assets/grey_empty.gif" {{bindAttr data-original="image.thumbnailUrl" alt="image.fileName"}} {{action selectImage image target="view"}} />
+    </div>
+  {{/each}}
+</div>
+

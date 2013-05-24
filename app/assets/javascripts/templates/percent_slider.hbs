@@ -1,0 +1,14 @@
+<div class='data-container'>
+  <div class='top-line'>
+    <div class='name'>
+      {{view.label}}
+    </div>
+    <spring class='one'></spring>
+    <div class='percentage'>
+      {{view.prettyPercentage}}%
+    </div>
+  </div>
+  <div class='status-bar'>
+    <div {{bindAttr style="view.styleWidth"}} class='inner-bar'></div>
+  </div>
+</div>
