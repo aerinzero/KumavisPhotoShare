@@ -2,7 +2,7 @@ KumavisPhotoShare.ApplicationView = Ember.View.extend
   
   # Element heights
   controlPanelHeight: 150
-  filmStripWidth: 200
+  filmStripWidth: 210
   
   currentImage: (-> 
     retVal = @get('controller.currentImage')

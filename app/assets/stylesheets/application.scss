@@ -49,24 +49,22 @@ html, body{
 }
 
 .loading-modal{
-  background: linear-gradient(#fff, #E8E8E8);
-  border-radius: 4px;
-  box-shadow: 0px 1px 1px #ccc;
-  padding: 10px;
-  margin-top: 17px;
+  background: #a4672e;
+  border-radius: 30px;
+  border: solid 4px rgb(126,165,1);
+  padding: 20px;
   
   .top-line{
     display:box;
-    font-size: 12px;
+    font-size: 24px;
+    font-family: 'Oleo Script Swash Caps', cursive;
   }
   .status-bar{
     border-radius: 15px;
     background: linear-gradient(#ccc, #ddd);
-    box-shadow: -1px 1px 1px white;
     margin-top: 10px;
-    height:10px;
+    height:12px;
     overflow:hidden;
-
 
     .inner-bar{
       background: rgb(94,151,198);
@@ -79,6 +77,10 @@ html, body{
 .left{
   // background-image: url('/assets/foresttile.jpg');
   background: rgb(126,165,1);
+
+  .thumbnail img {
+    border-radius:36px;
+  }
 
   .controlPanel{
     background: rgba(200, 200, 200, 0.5);
@@ -130,6 +132,7 @@ html, body{
 .right{
   background: rgb(164,103,46);
   overflow-y: scroll;
+  padding-left: 10px;
 
   .thumbnail{
     width: 200px;

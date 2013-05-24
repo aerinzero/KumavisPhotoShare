@@ -32,7 +32,7 @@ KumavisPhotoShare.LoadingModalController = Em.ObjectController.extend
     # if progress value is (1), then final processing is happening
     #  so update the label
     if progress == 1
-      @set('label',"Completing Upload")
+      @set('label',"Please Wait...")
 
     # call the any external callback
     callback = @get('onprogressCallback')
