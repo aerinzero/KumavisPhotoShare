@@ -12,9 +12,21 @@ KumavisPhotoShare.ApplicationView = Ember.View.extend
     return retVal
   ).property('controller.currentImage','controller.firstObject')
 
+  currentImageUrl: (->
+    # trigger reposition after image loads
+    Ember.run.next => @$('.left .thumbnail img').on 'load', => $(window).resize()
+    
+    if @get('showLargeCurrentImage')
+      @get('currentImage.largeUrl')
+    else
+      @get('currentImage.mediumUrl')
+  ).property('currentImage','showLargeCurrentImage')
+
+  showLargeCurrentImage: true
+
   selectImage: (image) -> 
     @set('controller.currentImage',image)
-
+    # trigger reposition after image loads
     Ember.run.next => @$('.left .thumbnail img').on 'load', => $(window).resize()
 
   didInsertElement: ->
@@ -29,6 +41,8 @@ KumavisPhotoShare.ApplicationView = Ember.View.extend
     @_setupFileHandling()
 
   positionElements: ->
+    # set image size
+    @set 'showLargeCurrentImage', @$('.left').width()>900
 
     # Main section, left
     @$('.left').width $(window).width()-@get('filmStripWidth')

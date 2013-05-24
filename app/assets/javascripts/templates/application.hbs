@@ -6,11 +6,9 @@
 
 <div class="left">
 
-  {{#if view.currentImage}}
-    <div class="thumbnail">
-      <img {{bindAttr src="view.currentImage.largeUrl" alt="view.currentImage.fileName"}}/>
-    </div>
-  {{/if}}
+  <div class="thumbnail">
+      <img {{bindAttr src="view.currentImageUrl" alt="view.currentImage.fileName"}}/>
+  </div>
 
   <div class="controlPanel">
 
