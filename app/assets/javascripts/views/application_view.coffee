@@ -73,7 +73,7 @@ KumavisPhotoShare.ApplicationView = Ember.View.extend
       left: $(window).width()-@get('filmStripWidth')
     @$('.right').height $(window).height()
 
-    # setup lazy loading for images
+    # setup lazy loading for images - class 'lazy' is added when this is setup
     @$(".thumbnail > img:not(.lazy)").lazyload
       container: $(".right")
 

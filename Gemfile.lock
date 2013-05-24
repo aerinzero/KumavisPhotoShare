@@ -139,7 +139,6 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
   ember-rails
-  ember-source (= 1.0.0.pre4.2)
   jquery-rails
   paperclip (~> 2.7)
   pry

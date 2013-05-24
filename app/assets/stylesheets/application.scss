@@ -21,6 +21,13 @@ html, body{
     overflow: hidden;
 }
 
+#overlay{
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 100;
+}
+
 .left{
   // background-image: url('/assets/foresttile.jpg');
   background: rgb(126,165,1);
@@ -42,12 +49,14 @@ html, body{
     }
 
     #uploadBtn{
-      width: 300px;
+      width: 150px;
 
      .label{
         // float: left;
       }
     }
+
+
 
     .btn:hover{
       color: blue;
@@ -58,6 +67,7 @@ html, body{
 
     }
 
+    #uploader:hover + #uploadBtn .label {color: blue}
     input#uploader {
       height: 30px;
       cursor: pointer;
